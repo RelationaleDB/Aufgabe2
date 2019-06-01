@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.Pane?>
+
+<StackPane id="pane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="rdb.pres.searchKeyword.SearchKeywordController">
+  <stylesheets>
+    <URL value="@searchkeyword.css"/>
+  </stylesheets>
+  <padding>
+    <Insets topRightBottomLeft="10.0"/>
+  </padding>
+  <VBox spacing="10.0" alignment="CENTER">
+    <Label text="Search for keywords/phrase" underline="true">
+      <font>
+        <Font name="System Bold" size="16.0"/>
+      </font>
+    </Label>
+    <Label labelFor="$null" text="Keyword/Phrase:">
+      <font>
+        <Font size="14.0" fx:id="x1"/>
+      </font>
+    </Label>
+    <TextField id="keywordTF" fx:id="keywordTextField" promptText="enter keyword or phrase" maxWidth="400.0"/>
+    <HBox spacing="10.0" alignment="CENTER">
+      <RadioButton id="matchAllRB" fx:id="matchAllRadioButton" font="$x1" selected="true" text="match all">
+        <toggleGroup>
+          <ToggleGroup fx:id="matchGroup"/>
+        </toggleGroup>
+      </RadioButton>
+      <RadioButton id="matchAnyRB" fx:id="matchAnyRadioButton" font="$x1" text="match any" toggleGroup="$matchGroup"/>
+      <RadioButton fx:id="matchExactRadioButton" font="$x1" text="match exact" toggleGroup="$matchGroup"/>
+    </HBox>
+    <Label font="$x1" text="Search for:">
+      <labelFor>
+        <CheckBox fx:id="titleCB" font="$x1"  selected="true" text="Titles"/>
+      </labelFor>
+    </Label>
+    <HBox>
+      <Pane HBox.hgrow="ALWAYS"/>
+      <VBox spacing="5.0" HBox.hgrow="NEVER">
+        <fx:reference source="titleCB"/>
+        <CheckBox fx:id="personCB" font="$x1"  selected="true" text="Persons"/>
+        <CheckBox fx:id="characterCB" font="$x1"  selected="true" text="Characters"/>
+        <CheckBox fx:id="companiesCB" font="$x1"  selected="true" text="Companies"/>
+        <Separator maxWidth="200.0"/>
+        <CheckBox fx:id="selectAllCB" font="$x1"  onAction="#selectAll" selected="true" text="De-/Select All"/>
+      </VBox>
+      <Pane HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <Button defaultButton="true" font="$x1" onAction="#processSearch" text="Search!">
+      <VBox.margin>
+        <Insets top="10.0"/>
+      </VBox.margin>
+    </Button>
+  </VBox>
+</StackPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+
+<StackPane id="StackPane" styleClass="background" xmlns="http://javafx.com/javafx/8"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="rdb.pres.login.LoginController">
+  <stylesheets>
+    <URL value="@Login.css"/>
+  </stylesheets>
+  <padding>
+    <Insets topRightBottomLeft="10.0"/>
+  </padding>
+  <VBox spacing="10.0">
+      <StackPane alignment="TOP_RIGHT">
+        <ImageView id="uni-bonn-logo">
+          <Image preserveRatio="true" smooth="true" url="@logo_uni_bonn.png"/>
+        </ImageView>
+      </StackPane>
+    <StackPane id="oraclePane">
+        <padding>
+            <Insets topRightBottomLeft="5.0"/>
+        </padding>
+      <VBox>
+        <Label text="Oracle-Login:">
+          <font>
+            <Font name="System Bold" size="16.0" fx:id="x1"/>
+          </font>
+        </Label>
+        <Label id="label1" text="Username"/>
+        <TextField id="userNameTextField" fx:id="oracleUsername"/>
+        <Label id="label1" layoutX="14.0" layoutY="75.0" text="Password"/>
+        <PasswordField id="passwordField" fx:id="oraclePassword"/>
+      </VBox>
+    </StackPane>
+    <HBox id="hBox1" alignment="CENTER">
+      <Label id="label2" fx:id="statusMessage"/>
+    </HBox>
+    <HBox alignment="TOP_CENTER" spacing="20.0">
+      <Button defaultButton="true" onAction="#processOracleLogin" text="Login">
+        <font>
+          <Font size="14.0" fx:id="x2"/>
+        </font>
+      </Button>
+      <Button font="$x2" onAction="#processQuit" text="Quit"/>
+    </HBox>
+  </VBox>
+</StackPane>

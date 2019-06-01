@@ -1,0 +1,15 @@
+reldb/bdo/MovieCompany.class
+reldb/data/MovieCompanyDAOImpl.class
+rdb/pres/login/LoginController.class
+rdb/ImdbSearch.class
+rdb/pres/mainmenu/MainMenuController.class
+reldb/bdo/PersonBiography.class
+reldb/bdo/DatabaseSettings.class
+reldb/bdo/Person.class
+rdb/app/LoginApp.class
+reldb/data/DbConnection.class
+reldb/data/DbConnectionOracle.class
+reldb/data/DbConnectionSingletonFactory.class
+reldb/data/MovieCompanyDAO.class
+rdb/pres/searchKeyword/SearchKeywordController.class
+reldb/bdo/OracleUser.class
